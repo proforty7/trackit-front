@@ -1,11 +1,16 @@
 import React from "react";
-import { Card } from "antd";
+import { Layout } from "antd";
+import Navbar from "../elements/Navbar";
+import Banner from "../elements/Banner";
 
 const Home = () => {
   return (
-    <div>
-      <Card>TrackIt</Card>
-    </div>
+    <>
+      <Layout>
+        <Navbar />
+        <Banner />
+      </Layout>
+    </>
   );
 };
 
