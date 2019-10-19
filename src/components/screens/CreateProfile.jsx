@@ -50,12 +50,15 @@ const CreateProfile = ({ form, history }) => {
           <Typography.Title>{user.name}</Typography.Title>
           <Form.Item>
             {getFieldDecorator("bio")(
-              <Input.TextArea placeholder="Add bio..." rows={5} />
+              <Input.TextArea
+                placeholder="Add any previous treatments, prescriptions (if any)"
+                rows={5}
+              />
             )}
           </Form.Item>
 
           <Row type="flex" justify="space-between">
-            <Col span={24}>
+            <Col span={11}>
               <Form.Item>
                 {getFieldDecorator("handle", {
                   rules: [{ required: true, message: "Username is required" }]
@@ -68,50 +71,7 @@ const CreateProfile = ({ form, history }) => {
                 )}
               </Form.Item>
             </Col>
-          </Row>
-          <Row type="flex" justify="space-between">
             <Col span={11}>
-              <Form.Item>
-                {getFieldDecorator("status", {
-                  rules: [{ required: true, message: "Status is required" }]
-                })(
-                  <Select size="large" placeholder="Select a status">
-                    <Select.Option key="student" value="student">
-                      Student
-                    </Select.Option>
-                    <Select.Option key="teacher" value="teacher">
-                      Teacher
-                    </Select.Option>
-                  </Select>
-                )}
-              </Form.Item>
-            </Col>
-            <Col span={11}>
-              <Form.Item>
-                {getFieldDecorator("githubusername")(
-                  <Input
-                    addonBefore={<Icon type="github" />}
-                    size="large"
-                    placeholder="Enter your github username"
-                  />
-                )}
-              </Form.Item>
-            </Col>
-            <Col span={24}>
-              <Form.Item>
-                {getFieldDecorator("skills", {
-                  rules: [
-                    { required: true, message: "Atleast one skill is required" }
-                  ]
-                })(
-                  <Input
-                    size="large"
-                    placeholder="Add skills (separated by commas) "
-                  />
-                )}
-              </Form.Item>
-            </Col>
-            <Col span={24}>
               <Form.Item>
                 {getFieldDecorator("location")(
                   <Select size="large" placeholder="Select your location">
@@ -124,41 +84,70 @@ const CreateProfile = ({ form, history }) => {
                 )}
               </Form.Item>
             </Col>
-            <Col span={24}>
-              <Card
-                title={
-                  <div style={{ fontSize: 20 }}>
-                    <Icon type="book" style={{ marginRight: 15 }} />
-                    <Typography.Text>Academic Details</Typography.Text>
-                  </div>
-                }
-              >
-                <Form.Item>
-                  {getFieldDecorator("collegeID")(
-                    <Input size="large" placeholder="Enter your College ID" />
-                  )}
-                </Form.Item>
-                <Form.Item>
-                  {getFieldDecorator("branch")(
-                    <Select size="large" placeholder="Select your Branch">
-                      {BRANCHES.map(branch => (
-                        <Select.Option key={branch} value={branch}>
-                          {branch}
-                        </Select.Option>
-                      ))}
-                    </Select>
-                  )}
-                </Form.Item>
-                <Form.Item>
-                  {getFieldDecorator("yearOfJoin")(
-                    <Input
-                      size="large"
-                      placeholder="Enter your Year of Joining (YYYY)"
-                    />
-                  )}
-                </Form.Item>
-              </Card>
+          </Row>
+          <Row type="flex" justify="space-between">
+            <Col span={7}>
+              <Form.Item>
+                {getFieldDecorator("identity", {
+                  rules: [{ required: true, message: "Identity is required" }]
+                })(
+                  <Select size="large" placeholder="Select an identity">
+                    <Select.Option key="doctor" value="doctor">
+                      Doctor
+                    </Select.Option>
+                    <Select.Option key="patient" value="patient">
+                      Patient
+                    </Select.Option>
+                  </Select>
+                )}
+              </Form.Item>
             </Col>
+            <Col span={7}>
+              <Form.Item>
+                {getFieldDecorator("age")(
+                  <Input
+                    addonBefore={<Icon type="age" />}
+                    size="large"
+                    placeholder="Enter your age"
+                    type="number"
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col span={7}>
+              <Form.Item>
+                {getFieldDecorator("gender", {
+                  rules: [{ required: true, message: "Gender is required" }]
+                })(
+                  <Select size="large" placeholder="Select a gender">
+                    <Select.Option key="male" value="male">
+                      Male
+                    </Select.Option>
+                    <Select.Option key="female" value="female">
+                      Female
+                    </Select.Option>
+                    <Select.Option key="other" value="other">
+                      Other
+                    </Select.Option>
+                  </Select>
+                )}
+              </Form.Item>
+            </Col>
+            <Col span={24}>
+              <Form.Item>
+                {getFieldDecorator("issues", {
+                  rules: [
+                    { required: true, message: "Atleast one issue is required" }
+                  ]
+                })(
+                  <Input
+                    size="large"
+                    placeholder="Add issues (separated by commas) "
+                  />
+                )}
+              </Form.Item>
+            </Col>
+
             <Button
               htmlType="submit"
               type="primary"

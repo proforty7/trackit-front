@@ -31,7 +31,11 @@ const Routing = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/register" component={Register} />
-        <PrivateRoute path="/create-profile" component={CreateProfile} />
+        <PrivateRoute
+          path="/create-profile"
+          component={CreateProfile}
+          user={user}
+        />
       </Switch>
     </BrowserRouter>
   );
