@@ -21,11 +21,11 @@ const NavbarMenu = ({ history }) => {
       </Menu.Item>
       <Menu.Item
         onClick={() => {
-          history.push("/users");
+          history.push("/doctors");
         }}
-        key="users"
+        key="doctors"
       >
-        Users
+        View doctors
       </Menu.Item>
       <Menu.Item
         onClick={() => {

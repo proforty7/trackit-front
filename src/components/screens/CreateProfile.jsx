@@ -16,7 +16,7 @@ import {
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Container from "../elements/Container";
-import { BRANCHES, LOCATIONS } from "../../utils";
+import { LOCATIONS } from "../../utils";
 import { createProfile } from "../../actions";
 
 const CreateProfile = ({ form, history }) => {
