@@ -6,4 +6,6 @@ import {
   setUser
 } from "./authActions";
 
-export { getUser, loginUser, logoutUser, registerUser, setUser };
+import { createProfile } from "./profileActions";
+
+export { getUser, loginUser, logoutUser, registerUser, setUser, createProfile };

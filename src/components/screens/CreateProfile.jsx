@@ -47,25 +47,12 @@ const CreateProfile = ({ form, history }) => {
     <Container>
       <Card>
         <Form onSubmit={onSubmit}>
-          <Row type="flex" align="middle">
-            <Col span={10}>
-              <div
-                style={{
-                  textAlign: "center"
-                }}
-              >
-                <Avatar icon="user" size={160} />
-              </div>
-            </Col>
-            <Col span={14}>
-              <Typography.Title>{user.name}</Typography.Title>
-              <Form.Item>
-                {getFieldDecorator("bio")(
-                  <Input.TextArea placeholder="Add bio..." rows={5} />
-                )}
-              </Form.Item>
-            </Col>
-          </Row>
+          <Typography.Title>{user.name}</Typography.Title>
+          <Form.Item>
+            {getFieldDecorator("bio")(
+              <Input.TextArea placeholder="Add bio..." rows={5} />
+            )}
+          </Form.Item>
 
           <Row type="flex" justify="space-between">
             <Col span={24}>
