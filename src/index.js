@@ -6,7 +6,6 @@ import thunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
 import "antd/dist/antd.css";
-import "./index.css";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import Routing from "./HOC/Routing";
+import Routing from "./hoc/Routing";
 import { getUser, setUser } from "../actions";
 
 const App = () => {
