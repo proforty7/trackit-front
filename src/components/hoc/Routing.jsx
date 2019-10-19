@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Navbar from "../elements/Navbar";
+import Home from "../screens/Home";
 
 const PrivateRoute = ({ path, component: Component, user, ...props }) => {
   if (user)
@@ -24,7 +26,9 @@ const Routing = () => {
 
   return (
     <BrowserRouter>
-      <Switch></Switch>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
     </BrowserRouter>
   );
 };
