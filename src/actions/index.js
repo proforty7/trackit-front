@@ -6,7 +6,12 @@ import {
   setUser
 } from "./authActions";
 
-import { createProfile, getAllProfiles } from "./profileActions";
+import {
+  createProfile,
+  getAllProfiles,
+  addDoctor,
+  getConnectionList
+} from "./profileActions";
 
 export {
   getUser,
@@ -15,5 +20,7 @@ export {
   registerUser,
   setUser,
   createProfile,
-  getAllProfiles
+  getAllProfiles,
+  addDoctor,
+  getConnectionList
 };

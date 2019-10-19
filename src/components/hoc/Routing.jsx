@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Register from "../screens/Register";
 import CreateProfile from "../screens/CreateProfile";
 import UsersList from "../screens/UsersList";
+import ConnectionList from "../screens/ConnectionList";
 
 const PrivateRoute = ({ path, component: Component, user, ...props }) => {
   if (user)
@@ -38,6 +39,11 @@ const Routing = () => {
           user={user}
         />
         <PrivateRoute path="/doctors" component={UsersList} user={user} />
+        <PrivateRoute
+          path="/connections"
+          component={ConnectionList}
+          user={user}
+        />
       </Switch>
     </BrowserRouter>
   );

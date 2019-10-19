@@ -1,14 +1,15 @@
 import React from "react";
 import { Card, Row, Col, Icon, Typography, Button } from "antd";
 import { withRouter } from "react-router-dom";
+import { addDoctor } from "../../actions";
 
 const User = ({ profile, history }) => {
-  const onUserClick = () => {
-    history.push(`/profile/${profile.user._id}`);
+  const onAddClick = async () => {
+    await addDoctor(profile._id);
   };
 
   return (
-    <Card style={{ width: "100%", cursor: "pointer" }} onClick={onUserClick}>
+    <Card style={{ width: "100%", cursor: "pointer" }}>
       <Row type="flex" align="middle">
         <Col
           span={4}
@@ -38,7 +39,9 @@ const User = ({ profile, history }) => {
               {profile.identity}
             </Col>
             <Col>
-              <Button type="primary">Add</Button>
+              <Button type="primary" onClick={onAddClick}>
+                Add
+              </Button>
             </Col>
           </Row>
         </Col>
