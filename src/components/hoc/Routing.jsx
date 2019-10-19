@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Navbar from "../elements/Navbar";
 import Home from "../screens/Home";
 import Register from "../screens/Register";
+import CreateProfile from "../screens/CreateProfile";
 
 const PrivateRoute = ({ path, component: Component, user, ...props }) => {
   if (user)
@@ -30,6 +31,7 @@ const Routing = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/register" component={Register} />
+        <PrivateRoute path="/create-profile" component={CreateProfile} />
       </Switch>
     </BrowserRouter>
   );
