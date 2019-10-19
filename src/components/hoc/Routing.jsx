@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Navbar from "../elements/Navbar";
 import Home from "../screens/Home";
+import Register from "../screens/Register";
 
 const PrivateRoute = ({ path, component: Component, user, ...props }) => {
   if (user)
@@ -28,6 +29,7 @@ const Routing = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/register" component={Register} />
       </Switch>
     </BrowserRouter>
   );

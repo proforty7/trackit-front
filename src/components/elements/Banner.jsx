@@ -17,10 +17,10 @@ const Banner = props => {
           style={{ color: "white", fontWeight: "700" }}
           level={1}
         >
-          RECON
+          TRACKIT
         </Typography.Title>
         <Typography.Title style={{ color: "white" }} level={3}>
-          Connecting students
+          Connecting doctors and patients
         </Typography.Title>
         <Button
           type="primary"

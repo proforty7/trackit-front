@@ -43,7 +43,7 @@ const Navbar = props => {
       <Row type="flex">
         <Col span={3}>
           <h1 style={{ color: "white" }}>
-            <Link to="/dashboard">RECON</Link>
+            <Link to="/dashboard">TrackIt</Link>
           </h1>
         </Col>
 
