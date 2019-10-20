@@ -19,7 +19,12 @@ export const getConnectionList = async () => {
   return res;
 };
 
-export const getProfile = async () => {
-  const response = await Axios.get("/api/profile");
-  return response;
+export const getProfile = async id => {
+  if (id === null || id === undefined) {
+    const response = await Axios.get("/api/profile");
+    return response;
+  } else {
+    const response = await Axios.get(`/api/profile/user/${id}`);
+    return response;
+  }
 };

@@ -20,9 +20,7 @@ import { getProfile } from "../../actions";
 const ViewProfile = props => {
   const [profile, setProfile] = useState(null);
   const [status, setStatus] = useState(null);
-  const id = props.match.params.userId || props.id;
-
-  const currentUser = id === props.user._id ? true : false;
+  const id = props.match.params.id;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +28,7 @@ const ViewProfile = props => {
       setProfile(response.data);
     };
     fetchData();
-  }, [id, currentUser]);
+  }, [id]);
 
   return (
     <Container>

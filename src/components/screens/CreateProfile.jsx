@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import _ from "lodash";
 import {
   Row,
@@ -21,6 +21,8 @@ import { createProfile } from "../../actions";
 
 const CreateProfile = ({ form, history }) => {
   const user = useSelector(state => state.auth.user);
+
+  const [who, setWho] = useState("patient");
 
   const onSubmit = e => {
     e.preventDefault();
@@ -91,7 +93,13 @@ const CreateProfile = ({ form, history }) => {
                 {getFieldDecorator("identity", {
                   rules: [{ required: true, message: "Identity is required" }]
                 })(
-                  <Select size="large" placeholder="Select an identity">
+                  <Select
+                    size="large"
+                    placeholder="Select an identity"
+                    onChange={value => {
+                      setWho(value);
+                    }}
+                  >
                     <Select.Option key="doctor" value="doctor">
                       Doctor
                     </Select.Option>
@@ -133,30 +141,36 @@ const CreateProfile = ({ form, history }) => {
                 )}
               </Form.Item>
             </Col>
+            {who === "patient" ? (
+              <Col span={24}>
+                <Form.Item>
+                  {getFieldDecorator("issues", {
+                    rules: [
+                      {
+                        required: true,
+                        message: "Atleast one issue is required"
+                      }
+                    ]
+                  })(
+                    <Input
+                      size="large"
+                      placeholder="Add issues (separated by commas) "
+                    />
+                  )}
+                </Form.Item>
+              </Col>
+            ) : null}
             <Col span={24}>
-              <Form.Item>
-                {getFieldDecorator("issues", {
-                  rules: [
-                    { required: true, message: "Atleast one issue is required" }
-                  ]
-                })(
-                  <Input
-                    size="large"
-                    placeholder="Add issues (separated by commas) "
-                  />
-                )}
-              </Form.Item>
+              <Button
+                htmlType="submit"
+                type="primary"
+                shape="round"
+                size="large"
+                style={{ marginTop: 25 }}
+              >
+                Create Profile
+              </Button>
             </Col>
-
-            <Button
-              htmlType="submit"
-              type="primary"
-              shape="round"
-              size="large"
-              style={{ marginTop: 25 }}
-            >
-              Create Profile
-            </Button>
           </Row>
         </Form>
       </Card>

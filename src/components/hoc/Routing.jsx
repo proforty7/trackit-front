@@ -46,6 +46,7 @@ const Routing = () => {
           user={user}
         />
         <PrivateRoute path="/dashboard" component={ViewProfile} user={user} />
+        <PrivateRoute path="/profile/:id" component={ViewProfile} user={user} />
       </Switch>
     </BrowserRouter>
   );
