@@ -10,7 +10,8 @@ import {
   createProfile,
   getAllProfiles,
   addDoctor,
-  getConnectionList
+  getConnectionList,
+  getProfile
 } from "./profileActions";
 
 export {
@@ -22,5 +23,6 @@ export {
   createProfile,
   getAllProfiles,
   addDoctor,
-  getConnectionList
+  getConnectionList,
+  getProfile
 };

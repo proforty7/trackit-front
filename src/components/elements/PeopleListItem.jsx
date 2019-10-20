@@ -8,7 +8,7 @@ const PeopleListItem = ({ user, history, bText }) => {
   };
 
   return (
-    <Card style={{ width: "100%" }}>
+    <Card style={{ width: "100%", backgroundColor: "lightblue" }}>
       <Row type="flex" align="middle">
         <Col
           span={4}

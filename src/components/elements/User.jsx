@@ -5,7 +5,7 @@ import { addDoctor } from "../../actions";
 
 const User = ({ profile, history }) => {
   const onAddClick = async () => {
-    await addDoctor(profile._id);
+    await addDoctor(profile.user._id);
   };
 
   return (

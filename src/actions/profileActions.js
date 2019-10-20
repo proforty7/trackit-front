@@ -18,3 +18,8 @@ export const getConnectionList = async () => {
   const res = await Axios.get("/api/user/people");
   return res;
 };
+
+export const getProfile = async () => {
+  const response = await Axios.get("/api/profile");
+  return response;
+};

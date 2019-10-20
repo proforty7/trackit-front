@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, List, message } from "antd";
 import { getConnectionList } from "../../actions";
 import PeopleListItem from "./PeopleListItem";
+import Container from "./Container";
 
 const PeopleList = ({ type }) => {
   const [loading, setLoading] = useState(true);
@@ -28,17 +29,19 @@ const PeopleList = ({ type }) => {
   }, [type, refresh]);
 
   return (
-    <Card loading={loading}>
-      <List>
-        {list.map(user => (
-          <List.Item key={user._id}>
-            <div style={{ width: "100%" }}>
-              <PeopleListItem user={user} bText={bText} />
-            </div>
-          </List.Item>
-        ))}
-      </List>
-    </Card>
+    <Container>
+      <Card loading={loading}>
+        <List>
+          {list.map(user => (
+            <List.Item key={user._id}>
+              <div style={{ width: "100%" }}>
+                <PeopleListItem user={user} bText={bText} />
+              </div>
+            </List.Item>
+          ))}
+        </List>
+      </Card>
+    </Container>
   );
 };
 
